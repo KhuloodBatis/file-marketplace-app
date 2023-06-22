@@ -39,7 +39,25 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+           <!-- URL -->
+           <div class='flex  items-center gap-2'>
+            <div class="mt-4 w-40">
+                <x-input-label for="url" :value="__('Subdomain')" />
+
+                <x-text-input id="url" class="block mt-1 w-full"
+                                type="text"
+                                name="url" required autofocus autocomplete="url" />
+
+                <x-input-error :messages="$errors->get('url')" class="mt-2" />
+            </div>
+            <div class="translate-y-5 text-gray-500 ">
+                <h1>.file-marketplace.com</h1>
+            </div>
+           </div>
+
+
+
+        <div class="flex items-center justify-end mt-4 ">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
